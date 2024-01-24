@@ -1,0 +1,142 @@
+﻿@model List<Portal.WEBUI.Dtos.EducationDto.ResultEducationDto>
+
+<div class="courses_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="courses_taital">Kurslarımıza göz atın</h1>
+                <p class="courses_text">Kurslarımızı eğitim dünyasına kazandırmaktan mutluluk duyuyoruz. Kurslarımıza göz atabilirsin.</p>
+            </div>
+        </div>
+
+       
+        
+
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+          
+            
+            <div class="carousel-inner">
+              
+               
+                <div class="carousel-item active">
+                    
+                      
+                    <div class="courses_section_2">
+                      
+                       
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+
+                            
+                             <div class="col-lg-3"> 
+                               
+                                <div class="hover01 column">
+
+                                        <figure>
+                                            <a href="/Education/EducationDetail/@item.EducationId">
+                                            <img src="@item.ImageFile" >
+                                            </a>
+                                            
+                                        </figure>
+                                </div>
+
+                                <h3 class="introduction_text">
+                                        <a href="/Education/EducationDetail/@item.EducationId">
+                                            @item.EducationName
+                                     </a></h3>
+
+                                    <p class="lorem_text"> 
+                                        
+                                        
+                                    @item.EducationDescribtion</p>
+                                    
+                            </div>
+                              
+
+
+
+
+
+
+
+
+
+                            }
+                           
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+               @* <div class="carousel-item">
+                    <div class="courses_section_2">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="hover01 column">
+                                    <figure><img src="~/TempPortal/images/img-1.png"></figure>
+                                </div>
+                                <h3 class="introduction_text">Introduction to CSS</h3>
+                                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et d</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="hover01 column">
+                                    <figure><img src="~/TempPortal/images/img-2.png"></figure>
+                                </div>
+                                <h3 class="introduction_text">The Complete Web Development </h3>
+                                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et d</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="hover01 column">
+                                    <figure><img src="~/TempPortal/images/img-3.png"></figure>
+                                </div>
+                                <h3 class="introduction_text">PHP Tips, Tricks, and Techniques</h3>
+                                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et d</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="courses_section_2">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="hover01 column">
+                                    <figure><img src="~/TempPortal/images/img-1.png"></figure>
+                                </div>
+                                <h3 class="introduction_text">Introduction to CSS</h3>
+                                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et d</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="hover01 column">
+                                    <figure><img src="~/TempPortal/images/img-2.png"></figure>
+                                </div>
+                                <h3 class="introduction_text">The Complete Web Development </h3>
+                                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et d</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="hover01 column">
+                                    <figure><img src="~/TempPortal/images/img-3.png"></figure>
+                                </div>
+                                <h3 class="introduction_text">PHP Tips, Tricks, and Techniques</h3>
+                                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et d</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+                
+            </div>
+            
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+               
+        </div>
+               
+    </div>
+</div>

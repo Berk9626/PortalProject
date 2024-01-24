@@ -1,0 +1,45 @@
+﻿@model Portal.WEBUI.Dtos.EducationDto.CreateEducationDto
+@{
+    ViewData["Title"] = "AddEducation";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data">
+
+    <label>Eğitim Adını Giriniz</label>
+    <input type="text" asp-for="EducationName" class="form-control" />
+    @*<span style="display:block;" asp-validation-for="ProductName" class="text-danger"></span>*@
+
+    <label>Eğitim adedini Giriniz</label>
+    <input type="text" asp-for="Quantity" class="form-control" />
+@*    <span style="display:block;" asp-validation-for="Title" class="text-danger"></span>
+*@
+    <label>Eğitim Açıklaması Giriniz</label>
+    <input type="text" asp-for="EducationDescribtion" class="form-control" />
+@*    <span style="display:block;" asp-validation-for="ProductDescription" class="text-danger"></span>
+*@
+    <label>Eğitim Fiyatını Giriniz</label>
+    <input type="text" asp-for="Price" class="form-control" />
+@*    <span style="display:block;" asp-validation-for="UnitPrice" class="text-danger"></span>
+*@
+    <label>Kontenjan Giriniz</label>
+    <input type="text" asp-for="Kontenjan" class="form-control" />
+@*    <span style="display:block;" asp-validation-for="UnitsInStock" class="text-danger"></span>
+*@
+   
+
+    <label>Ürünün Kategori Adını Giriniz</label>
+    @*<input type="text" asp-for="CategoryId" class="form-control" />*@
+   @* <span style="display:block;" asp-validation-for="CategoryId" class="text-danger"></span>*@
+     @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" }) 
+
+
+  
+
+    <label>Ürünün Görselini Ekleyiniz</label>
+    <input type="file" asp-for="ImageFile" class="form-control" />
+   @* <span style="display:block;" asp-validation-for="ImageFile" class="text-danger"></span>*@
+    <br />
+    <button class="btn btn-primary">Yeni Eğitim Ekle</button>
+</form>
+

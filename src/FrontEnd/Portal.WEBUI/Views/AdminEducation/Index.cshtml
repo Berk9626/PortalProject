@@ -1,0 +1,60 @@
+﻿@model List<Portal.WEBUI.Dtos.EducationDto.ResultEducationDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+    List<SelectListItem> categories = ViewBag.dgr1;
+}
+
+<table class="table table-bordered">
+
+<tr>
+    <th>#</th>
+    <th>Eğitim Id</th>
+    <th>Eğitim Adı</th>
+    <th>Eğitim Açıklaması</th>
+    <th>Eğitim Adedi</th>
+    <th>Eğitim Ücreti</th>
+    <th>Kontenjan</th>
+    <th>Eğitim Ekl. Tarihi</th>
+    <th>Category Bilgisi</th>
+    <th>Eğitim Görsel</th>
+    
+    <th>Aktif</th>
+    <th>Pasif</th>
+    <th>Güncelle</th>
+    <th>Sil</th>
+</tr>
+
+@foreach (var item in Model)
+{
+    count++;
+    <tr>
+        <td>@count</td>
+        <td>@item.EducationId</td>
+        <td>@item.EducationName</td>
+        <td>@item.EducationDescribtion</td>
+        <td>@item.Quantity</td>
+        <td>@item.Price</td>
+        <td>@item.Kontenjan</td>
+        <td>@item.AddingTime</td>
+            <td>
+                @categories.Find(x => int.Parse(x.Value) == item.CategoryId).Text
+            </td>
+            <td><img src="@item.ImageFile" style="width:100px; object-fit:contain;" alt="Resim Açıklaması"></td>
+
+
+            <td> <a href="/AdminEducation/ActiveProduct/@item.EducationId" class="btn btn-success"><strong>Aktif</strong></a></td>
+            <td> <a href="/AdminEducation/DeletedStatusProduct/@item.EducationId" class="btn  btn-warning"><strong>Pasif</strong></a></td>
+            <td> <a href="/AdminEducation/UpdateEducation/@item.EducationId" class="btn btn-info"><strong>Güncelle</strong></a></td>
+            <td> <a href="/AdminEducation/DeleteEducation/@item.EducationId" class="btn btn-outline-danger"><strong>Sil</strong></a></td>
+
+
+
+    </tr>
+}
+
+</table>
+<a href="/AdminEducation/AddEducation/" class="btn btn-info">Yeni Ürün Ekle</a>
+

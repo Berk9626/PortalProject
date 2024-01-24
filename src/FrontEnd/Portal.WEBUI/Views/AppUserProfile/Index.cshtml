@@ -1,0 +1,78 @@
+﻿@model Portal.WEBUI.Dtos.AppUserProfileDto.ResultAppUserProfileDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_SharedLayout.cshtml";
+}
+
+<div class="about_section layout_padding margin_top0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about_taital">Kullanıcı Güncelleme</div>
+    
+    <form asp-controller="AppUserProfile" asp-action="Index" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="FirstName">Ad</label>
+            <input type="text" class="form-control" id="FirstName" asp-for="FirstName">
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Soyad</label>
+            <input type="text" class="form-control" id="LastName" asp-for="LastName">
+        </div>
+
+        <div class="form-group">
+            <label for="Email">E-posta</label>
+            <input type="email" class="form-control" id="Email" asp-for="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="Address">Adres</label>
+            <input type="text" class="form-control" id="Address" asp-for="Address">
+        </div>
+
+        <div class="form-group">
+            <label for="City">Şehir</label>
+            <input type="text" class="form-control" id="City" asp-for="City">
+        </div>
+
+        <div class="form-group">
+            <label for="Country">Ülke</label>
+            <input type="text" class="form-control" asp-for="Country">
+        </div>
+
+        <div class="form-group">
+            <label for="Phone">Telefon</label>
+            <input type="tel" class="form-control" id="Phone" asp-for="Phone">
+        </div>
+
+        <div class="form-group">
+            <label for="PostalCode">Posta Kodu</label>
+            <input type="text" class="form-control" asp-for="PostalCode">
+        </div>
+
+        <div class="form-group">
+            <label for="ImageFile">Profil Resmi</label>
+            <input type="file" class="form-control-file" asp-for="ImageFile">
+        </div>
+
+        <div class="form-group">
+            <label for="Gender">Cinsiyet</label>
+            <select class="form-control" id="Gender" asp-for="Gender" required>
+                <option value="Male">Erkek</option>
+                <option value="Female">Kadın</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Birthday">Doğum Tarihi</label>
+            <input type="date" class="form-control" id="Birthday" asp-for="Birthday">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    </form>
+</div>
+        </div>
+        </div>
+</div>
+

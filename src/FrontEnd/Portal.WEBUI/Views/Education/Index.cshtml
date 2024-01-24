@@ -1,0 +1,46 @@
+﻿@model List<Portal.WEBUI.Dtos.UserEducationDto.ResultUserEducationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_SharedLayout.cshtml";
+}
+
+<div class="courses_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="courses_taital">Explore Courses</h1>
+                <p class="courses_text">do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+        </div>
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="courses_section_2">
+                        <div class="row">
+                            
+
+                                @foreach (var item in Model)
+                                {
+                                <div class="col-lg-4">
+
+
+                                    <div class="hover01 column">
+                                        <figure><img src="@item.Education.ImageFile"></figure>
+                                    </div>
+                                    <h3 class="introduction_text">@item.Education.EducationName</h3>
+                                    <p class="lorem_text">@item.Education.EducationDescribtion</p>
+                                </div>
+
+                            }
+                                
+
+
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,74 @@
+﻿  @model Portal.WEBUI.Dtos.ContactDto.CreateContactDto  
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_SharedLayout.cshtml";
+}
+
+<div class="contact_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="contact_taital">Contact Us</h1>
+                <p class="blog_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="contact_section_2">
+            <div class="row">
+                <div class="col-md-6 padding_left_0">
+                    <div class="map_main">
+                        <div class="map-responsive">
+                            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+                <form method="post" asp-action="Index" asp-controller="Contact">
+                    <div class="col-md-6">
+                        <div class="mail_section_1">
+                            <input type="text" class="mail_text" placeholder="Name" asp-for="Name">
+                            <input type="text" class="mail_text" placeholder="Phone Number" asp-for="Number">
+                            <input type="text" class="mail_text" placeholder="Email" asp-for="Email">
+                            <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" asp-for="Message"></textarea>
+                            <div class="send_bt" ><a>Yolla</a></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<form method="post" asp-action="SendMessage" asp-controller="Contact">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Adınız">
+                <label for="name">Adınız</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email" name="Email" placeholder="Email">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="subject" name="Subject" placeholder="Konu">
+                <label for="subject">Konu</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Mesajınızı Yazınız" name="Message" id="message" style="height: 150px"></textarea>
+                <label for="message">Mesaj</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-3" type="submit">Mesaj Gönder</button>
+        </div>
+    </div>
+</form>*@
+

@@ -1,0 +1,99 @@
+﻿
+<div class="header_section">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html"><img src="~/TempPortal/images/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Default/Index/">Ana Sayfa</a>
+                    </li>
+                      @if (User.Identity.IsAuthenticated)
+                    {
+                          <li class="nav-item">
+                              <a class="nav-link" href="/AppUserProfile/Index">Profilim</a>
+                           </li>
+                    }
+                  
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                        <a class="nav-link" href="/Education/Index">Kurslarım</a>
+                         </li>
+                    }
+                    
+
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Contact/Index">İletişim</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                         <li class="nav-item">
+                        <a class="nav-link" href="/Login/Logout">Çıkış Yap</a>
+                          </li>
+                    }
+                    else
+                    {
+                         <li class="nav-item">
+                        <a class="nav-link" href="/Login/Index">Giriş Yap</a>
+                          </li>
+                            
+                    }
+
+                   
+                   @* <li class="nav-item">
+                        <a class="nav-link" href="/Login/Logout">Çıkış Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Login/Logout">Çıkış Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Login/Logout">Çıkış Yap</a>
+                    </li>*@
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- banner section start -->
+    <div class="banner_section layout_padding">
+        <div class="container">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1 class="banner_taital">Sınırsız Eğitim Platformu</h1>
+                                <p class="banner_text">Ömür boyu öğrenme fırsatını içeren kurslarımızı keşfederek kariyerinize yön verin ve deneyimlerinizi kişiselleştirin</p>
+                                <div class="started_text"><a href="#">Bizi Keşfedin</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1 class="banner_taital">Öğrencilere %50 İndirim Fırsatı</h1>
+                                <p class="banner_text">Öğrencilere ve ofis çalışanlarına uygun ücretlerimiz sizi bekliyor. Tc kimliğin ile giriş yap ve en özel indirimlerden faydalan</p>
+                                <div class="started_text"><a href="#">Bizi Keşfedin</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1 class="banner_taital">Eğitimde yeni bir çığır açıyoruz</h1>
+                                <p class="banner_text">Birbirinden değerli eğitmenlerimizle, ister online, ister sınıf için eğitimler konusunda biz hazırız</p>
+                                <div class="started_text"><a href="#">Bizi Keşfedin</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+</div>
